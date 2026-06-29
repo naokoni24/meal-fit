@@ -33,7 +33,7 @@ function getStepsLabel(
   suggestion: MealSuggestion,
   cookingStyle?: CookingStyle,
 ): string {
-  const style = cookingStyle ?? (suggestion.convenienceItems ? "convenience" : "jisui");
+  const style = getDisplayCookingStyle(suggestion, cookingStyle);
   switch (style) {
     case "convenience":
       return "組み合わせ方を見る";
@@ -45,6 +45,30 @@ function getStepsLabel(
     default:
       return "作り方を見る";
   }
+}
+
+function getItemsLabel(
+  suggestion: MealSuggestion,
+  cookingStyle?: CookingStyle,
+): string {
+  const style = getDisplayCookingStyle(suggestion, cookingStyle);
+  switch (style) {
+    case "convenience":
+    case "deli":
+      return "買うもの";
+    case "eatout":
+      return "選ぶもの";
+    case "jisui":
+    default:
+      return "材料";
+  }
+}
+
+function getDisplayCookingStyle(
+  suggestion: MealSuggestion,
+  cookingStyle?: CookingStyle,
+): CookingStyle {
+  return cookingStyle ?? (suggestion.convenienceItems ? "convenience" : "jisui");
 }
 
 export function MealCard({
@@ -190,9 +214,11 @@ export function MealCard({
           </div>
         )}
 
-        {/* 材料 */}
+        {/* 調理スタイルに合わせた項目リスト */}
         <div>
-          <p className="mb-2 text-xs font-bold text-ink">材料</p>
+          <p className="mb-2 text-xs font-bold text-ink">
+            {getItemsLabel(suggestion, cookingStyle)}
+          </p>
           <ul className="grid grid-cols-1 gap-2 text-sm text-ink sm:grid-cols-2 sm:gap-x-4 sm:gap-y-1.5">
             {suggestion.ingredients.map((ing) => (
               <li
