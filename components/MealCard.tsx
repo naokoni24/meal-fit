@@ -70,8 +70,16 @@ export function MealCard({
           <>
             <img
               src={suggestion.imageUrl}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-35 blur-xl"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-cream/25" />
+            <img
+              src={suggestion.imageUrl}
               alt={suggestion.title}
-              className="h-full w-full object-contain object-center"
+              className="relative h-full w-full object-contain object-center"
               loading="lazy"
             />
             {suggestion.imageCredit && (
