@@ -278,7 +278,7 @@ export function MealForm() {
         >
           {loading ? (
             <span className="flex items-center justify-center gap-2">
-              <span>考えています<span className="inline-block w-6 text-left">{dots}</span></span>
+              <span>考えています<span className="inline-block w-9 text-left">{dots}</span></span>
               <span className="flex items-end gap-1">
                 {(["🍙", "🥦", "🐟", "🥚"] as const).map((emoji, i) => (
                   <span

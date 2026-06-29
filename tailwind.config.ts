@@ -49,14 +49,13 @@ const config: Config = {
           "50%": { transform: "translateY(-18px)", opacity: "0.7" },
         },
         pop: {
-          "0%, 100%": { transform: "translateY(0)   scale(1)",    opacity: "1" },
-          "40%":      { transform: "translateY(-20px) scale(1.25)", opacity: "0.9" },
-          "60%":      { transform: "translateY(-14px) scale(1.15)", opacity: "0.95" },
+          "0%, 100%": { transform: "translateY(0px) scale(1)" },
+          "50%":      { transform: "translateY(-10px) scale(1.15)" },
         },
       },
       animation: {
         wave: "wave 1.1s ease-in-out infinite",
-        pop:  "pop 1.2s ease-in-out infinite",
+        pop:  "pop 1.4s ease-in-out infinite",
       },
       fontSize: {
         xs: ["13px", { lineHeight: "1.5" }],
