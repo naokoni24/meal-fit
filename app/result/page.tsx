@@ -123,7 +123,12 @@ export default function ResultPage() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {response.suggestions.map((s, i) => (
-          <MealCard key={s.id} suggestion={s} index={i} />
+          <MealCard
+            key={s.id}
+            suggestion={s}
+            index={i}
+            cookingStyle={input.cookingStyle}
+          />
         ))}
       </div>
 

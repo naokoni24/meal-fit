@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { MealSuggestion } from "@/lib/types";
+import type { CookingStyle, MealSuggestion } from "@/lib/types";
 import { isFavorite, toggleFavorite, addIngredients } from "@/lib/storage";
 import { PFCBar } from "./PFCBar";
 import { ScoreStars } from "./ScoreStars";
@@ -29,13 +29,33 @@ function buildLineUrl(s: MealSuggestion): string {
   return `https://line.me/R/msg/text/?${encodeURIComponent(text)}`;
 }
 
+function getStepsLabel(
+  suggestion: MealSuggestion,
+  cookingStyle?: CookingStyle,
+): string {
+  const style = cookingStyle ?? (suggestion.convenienceItems ? "convenience" : "jisui");
+  switch (style) {
+    case "convenience":
+      return "組み合わせ方を見る";
+    case "deli":
+      return "食べ方を見る";
+    case "eatout":
+      return "選び方を見る";
+    case "jisui":
+    default:
+      return "作り方を見る";
+  }
+}
+
 export function MealCard({
   suggestion,
   index,
+  cookingStyle,
   onFavoriteChange,
 }: {
   suggestion: MealSuggestion;
   index: number;
+  cookingStyle?: CookingStyle;
   onFavoriteChange?: () => void;
 }) {
   const [faved, setFaved] = useState(false);
@@ -183,11 +203,11 @@ export function MealCard({
           </ul>
         </div>
 
-        {/* 作り方（折りたたみ） */}
+        {/* 調理スタイルに合わせた補足（折りたたみ） */}
         {suggestion.steps.length > 0 && (
           <details className="group rounded-3xl bg-cream/70 p-4">
             <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-ink">
-              作り方を見る
+              {getStepsLabel(suggestion, cookingStyle)}
               <span className="text-ink-soft transition group-open:rotate-180">
                 ⌄
               </span>
