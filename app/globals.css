@@ -11,12 +11,21 @@
   html,
   body {
     max-width: 100%;
+    overflow-x: clip;
     overflow-x: hidden;
   }
 
   body {
     @apply bg-cream text-ink antialiased;
     font-feature-settings: "palt";
+  }
+
+  main,
+  header,
+  footer {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: clip;
   }
   ::selection {
     background-color: #f3d9ce;

@@ -23,8 +23,8 @@ export default function Home() {
     <div>
       {/* ヒーロー */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -left-16 -top-10 h-64 w-64 rounded-full bg-coral-soft/60 blur-3xl" />
-        <div className="pointer-events-none absolute -right-20 top-20 h-72 w-72 rounded-full bg-sage-soft/60 blur-3xl" />
+        <div className="pointer-events-none absolute -left-16 -top-10 hidden h-64 w-64 rounded-full bg-coral-soft/60 blur-3xl sm:block" />
+        <div className="pointer-events-none absolute -right-20 top-20 hidden h-72 w-72 rounded-full bg-sage-soft/60 blur-3xl sm:block" />
         <div className="relative mx-auto max-w-3xl px-5 pb-10 pt-16 text-center sm:pt-24">
           <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
             がんばらない、
