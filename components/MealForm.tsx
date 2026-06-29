@@ -275,7 +275,7 @@ export function MealForm() {
 
       {/* ローディングオーバーレイ */}
       {loading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-cream/90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-cream">
           <div className="text-center">
             <div className="flex items-end justify-center gap-5">
               {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
