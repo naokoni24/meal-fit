@@ -14,8 +14,8 @@ const steps = [
 ];
 
 const samples = [
-  { emoji: "🍳", title: "鶏むね肉とキャベツの蒸し煮", kcal: 320, tag: "高たんぱく・低脂質" },
-  { emoji: "🏪", title: "サラダチキン＋ゆで卵＋味噌汁", kcal: 280, tag: "コンビニで完結" },
+  { emoji: "🍳", image: "/images/sample-chicken-cabbage.webp", title: "鶏むね肉とキャベツの蒸し煮", kcal: 320, tag: "高たんぱく・低脂質" },
+  { emoji: "🏪", image: null, title: "サラダチキン＋ゆで卵＋味噌汁", kcal: 280, tag: "コンビニで完結" },
 ];
 
 export default function Home() {
@@ -101,8 +101,14 @@ export default function Home() {
               key={s.title}
               className="overflow-hidden rounded-4xl border border-line bg-surface shadow-card"
             >
-              <div className="flex h-28 items-center justify-center bg-gradient-to-br from-coral-soft via-cream to-sage-soft text-4xl">
-                {s.emoji}
+              <div className="relative h-28 overflow-hidden">
+                {s.image ? (
+                  <img src={s.image} alt={s.title} className="h-full w-full object-cover" />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-coral-soft via-cream to-sage-soft text-4xl">
+                    {s.emoji}
+                  </div>
+                )}
               </div>
               <div className="p-5">
                 <span className="rounded-full bg-sage-soft px-2.5 py-1 text-xs text-sage-deep">
