@@ -116,9 +116,9 @@ export function MealForm() {
   };
 
   return (
-    <div className="space-y-7">
+    <div className="min-w-0 space-y-7">
       {/* 必須3項目 */}
-      <section className="space-y-6 rounded-4xl border border-line bg-surface p-5 shadow-card sm:p-7">
+      <section className="min-w-0 space-y-6 rounded-4xl border border-line bg-surface p-5 shadow-card sm:p-7">
         <Field label="今日の目的は？" required>
           <SegmentGroup
             options={GOAL_OPTIONS}
@@ -150,7 +150,7 @@ export function MealForm() {
       </section>
 
       {/* 詳しく設定（任意） */}
-      <section className="overflow-hidden rounded-4xl border border-line bg-surface shadow-card">
+      <section className="min-w-0 overflow-hidden rounded-4xl border border-line bg-surface shadow-card">
         <button
           type="button"
           onClick={() => setShowMore((v) => !v)}
@@ -171,7 +171,7 @@ export function MealForm() {
         </button>
 
         {showMore && (
-          <div className="space-y-6 border-t border-line px-5 py-6 sm:px-7">
+          <div className="min-w-0 space-y-6 border-t border-line px-5 py-6 sm:px-7">
             <Field
               label="使いたい食材"
               hint="冷蔵庫にあるものを入れると、なるべく使った献立にします。"

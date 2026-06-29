@@ -115,17 +115,17 @@ export function TagInput({
       : "bg-sage-soft text-sage-deep";
 
   return (
-    <div className="rounded-2xl border border-line bg-surface px-3 py-2.5 focus-within:border-coral/60">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="min-w-0 rounded-2xl border border-line bg-surface px-3 py-2.5 focus-within:border-coral/60">
+      <div className="flex min-w-0 flex-wrap items-center gap-2">
         {values.map((t) => (
           <span
             key={t}
             className={cx(
-              "flex items-center gap-1 rounded-full px-3 py-1 text-sm",
+              "flex max-w-full items-center gap-1 rounded-full px-3 py-1 text-sm",
               chipClass,
             )}
           >
-            {t}
+            <span className="min-w-0 truncate">{t}</span>
             <button
               type="button"
               onClick={() => remove(t)}
@@ -142,7 +142,7 @@ export function TagInput({
           onKeyDown={onKeyDown}
           onBlur={add}
           placeholder={values.length ? "" : placeholder}
-          className="min-w-[8rem] flex-1 bg-transparent py-1 text-sm outline-none placeholder:text-ink-soft/70"
+          className="min-w-0 flex-1 bg-transparent py-1 text-sm outline-none placeholder:text-ink-soft/70 sm:min-w-[8rem]"
         />
       </div>
     </div>
