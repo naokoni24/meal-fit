@@ -36,7 +36,7 @@ function getStepsLabel(
   const style = getDisplayCookingStyle(suggestion, cookingStyle);
   switch (style) {
     case "convenience":
-      return "組み合わせ方を見る";
+      return "食べ方を見る";
     case "deli":
       return "食べ方を見る";
     case "eatout":
