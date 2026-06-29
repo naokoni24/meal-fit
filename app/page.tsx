@@ -15,7 +15,7 @@ const steps = [
 
 const samples = [
   { emoji: "🍳", image: "/images/sample-chicken-cabbage.webp", title: "鶏むね肉とキャベツの蒸し煮", kcal: 320, tag: "高たんぱく・低脂質" },
-  { emoji: "🏪", image: null, title: "サラダチキン＋ゆで卵＋味噌汁", kcal: 280, tag: "コンビニで完結" },
+  { emoji: "🏪", image: "/images/sample-salad-chicken-set.webp", title: "サラダチキン＋ゆで卵＋味噌汁", kcal: 280, tag: "コンビニで完結" },
 ];
 
 export default function Home() {
