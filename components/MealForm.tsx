@@ -179,7 +179,7 @@ export function MealForm() {
               <TagInput
                 values={useIngredients}
                 onChange={setUseIngredients}
-                placeholder="例：鶏むね肉、キャベツ（Enterで追加）"
+                placeholder="例：鶏むね肉、キャベツ"
                 accent="sage"
               />
             </Field>
@@ -187,7 +187,7 @@ export function MealForm() {
               <TagInput
                 values={avoidIngredients}
                 onChange={setAvoidIngredients}
-                placeholder="例：きのこ（Enterで追加）"
+                placeholder="例：きのこ"
                 accent="coral"
               />
             </Field>
@@ -234,7 +234,7 @@ export function MealForm() {
               <TagInput
                 values={allergies}
                 onChange={setAllergies}
-                placeholder="例：卵、乳、小麦（Enterで追加）"
+                placeholder="例：卵、乳、小麦"
                 accent="coral"
               />
             </Field>
