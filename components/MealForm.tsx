@@ -288,12 +288,12 @@ export function MealForm() {
       {loading && typeof document !== "undefined" && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-cream">
           <div className="text-center">
-            <div className="relative mx-auto h-32 w-32">
+            <div className="flex items-end justify-center gap-5">
               {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
                 <span
                   key={emoji}
-                  className="animate-orbit absolute left-1/2 top-1/2 -ml-5 -mt-5 text-4xl"
-                  style={{ animationDelay: `${i * -0.75}s` }}
+                  className="animate-pop text-4xl"
+                  style={{ animationDelay: `${i * 0.2}s` }}
                 >
                   {emoji}
                 </span>
