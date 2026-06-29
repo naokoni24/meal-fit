@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { getUser } from "@/lib/supabase/auth";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "ととのうごはん｜がんばらない、ヘルシーごはん提案",
@@ -51,67 +51,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="font-sans min-h-screen flex flex-col">
-        <header className="sticky top-0 z-30 border-b border-line/70 bg-cream/80 backdrop-blur-md">
-          <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5">
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center text-2xl">
-                🍃
-              </span>
-              <span className="leading-tight">
-                <span className="block text-base font-bold text-ink">
-                  ととのうごはん
-                </span>
-                <span className="font-display block text-[10px] tracking-widest text-ink-soft">
-                  AI MEAL PLANNER
-                </span>
-              </span>
-            </Link>
-            <nav className="flex items-center gap-1.5">
-              <Link
-                href="/favorites"
-                aria-label="お気に入り"
-                className="grid h-10 w-10 place-items-center rounded-full text-lg text-coral-deep transition hover:bg-coral-soft"
-              >
-                ♥
-              </Link>
-              <Link
-                href="/shopping"
-                aria-label="買い物リスト"
-                className="grid h-10 w-10 place-items-center rounded-full text-base transition hover:bg-sage-soft"
-              >
-                🛒
-              </Link>
-              {isSupabaseConfigured &&
-                (user ? (
-                  <form action="/auth/signout" method="post">
-                    <button
-                      type="submit"
-                      aria-label="ログアウト"
-                      title="ログアウト"
-                      className="grid h-10 w-10 place-items-center rounded-full text-base transition hover:bg-coral-soft"
-                    >
-                      ⏻
-                    </button>
-                  </form>
-                ) : (
-                  <Link
-                    href="/login"
-                    aria-label="ログイン"
-                    title="ログイン"
-                    className="grid h-10 w-10 place-items-center rounded-full text-base transition hover:bg-coral-soft"
-                  >
-                    👤
-                  </Link>
-                ))}
-              <Link
-                href="/create"
-                className="rounded-full bg-coral px-4 py-2.5 text-sm font-medium text-white shadow-soft transition hover:bg-coral-deep"
-              >
-                つくる
-              </Link>
-            </nav>
-          </div>
-        </header>
+        <Header user={user} />
 
         <main className="flex-1">{children}</main>
 
