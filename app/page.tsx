@@ -101,9 +101,9 @@ export default function Home() {
               key={s.title}
               className="overflow-hidden rounded-4xl border border-line bg-surface shadow-card"
             >
-              <div className="relative h-28 overflow-hidden">
+              <div className="relative h-28 overflow-hidden bg-cream">
                 {s.image ? (
-                  <img src={s.image} alt={s.title} className="h-full w-full object-cover" />
+                  <img src={s.image} alt={s.title} className="h-full w-full object-contain" />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-coral-soft via-cream to-sage-soft text-4xl">
                     {s.emoji}
