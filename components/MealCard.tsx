@@ -87,7 +87,7 @@ export function MealCard({
           </>
         ) : (
           <div className="flex h-full items-center justify-center bg-gradient-to-br from-coral-soft via-cream to-sage-soft">
-            <span className="text-5xl drop-shadow-sm">{isConveni ? "🛍️" : "🍳"}</span>
+            <span className="text-5xl drop-shadow-sm">{isConveni ? "🏪" : "🍳"}</span>
           </div>
         )}
         <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-xs font-bold text-coral-deep backdrop-blur">
@@ -142,7 +142,7 @@ export function MealCard({
         {suggestion.convenienceItems && (
           <div className="space-y-3 rounded-3xl border border-line p-4">
             <div>
-              <p className="text-xs font-bold text-coral-deep">🛍️ 買うものリスト</p>
+              <p className="text-xs font-bold text-coral-deep">🏪 買うものリスト</p>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {suggestion.convenienceItems.buyList.map((b) => (
                   <li
