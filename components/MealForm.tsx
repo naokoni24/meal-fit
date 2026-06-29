@@ -51,6 +51,16 @@ export function MealForm() {
   const [showMore, setShowMore] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [dots, setDots] = useState("");
+
+  // ローディング中のドットアニメーション
+  useEffect(() => {
+    if (!loading) { setDots(""); return; }
+    const steps = ["", "・", "・・", "・・・"];
+    let i = 0;
+    const id = setInterval(() => { i = (i + 1) % steps.length; setDots(steps[i]); }, 500);
+    return () => clearInterval(id);
+  }, [loading]);
 
   // 前回の設定を復元
   useEffect(() => {
@@ -289,7 +299,9 @@ export function MealForm() {
                 </span>
               ))}
             </div>
-            <p className="mt-8 text-lg font-bold text-ink">献立を考えています</p>
+            <p className="mt-8 text-lg font-bold text-ink">
+              献立を考えています<span className="inline-block w-8 text-left">{dots}</span>
+            </p>
             <p className="mt-1.5 text-sm text-ink-soft">AIが最適なメニューを選んでいます…</p>
           </div>
         </div>,
