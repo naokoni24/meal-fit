@@ -180,9 +180,6 @@ export function MealCard({
           {suggestion.convenienceItems && (
             <div className="mt-3 space-y-2 border-t border-sage/20 pt-3">
               <p className="text-xs leading-relaxed text-ink-soft">
-                {suggestion.convenienceItems.reason}
-              </p>
-              <p className="text-xs leading-relaxed text-ink-soft">
                 <span className="font-bold">栄養バランス：</span>
                 {suggestion.convenienceItems.nutritionBalance}
               </p>
