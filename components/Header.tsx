@@ -26,7 +26,7 @@ export function Header({ user }: { user: { id: string } | null }) {
 
   return (
     <header
-      className={`sticky top-0 z-30 border-b border-line/70 bg-cream/80 backdrop-blur-md transition-transform duration-300 ${
+      className={`fixed inset-x-0 top-0 z-30 border-b border-line/70 bg-cream/80 backdrop-blur-md transition-transform duration-300 ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >

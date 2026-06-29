@@ -53,7 +53,7 @@ export default async function RootLayout({
       <body className="font-sans min-h-screen flex flex-col">
         <Header user={user} />
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-[69px]">{children}</main>
 
         <footer className="mt-16 border-t border-line bg-surface/60">
           <div className="mx-auto max-w-5xl px-5 py-8 text-center text-xs leading-relaxed text-ink-soft">
