@@ -185,19 +185,7 @@ export function MealCard({
         {/* コンビニモード専用 */}
         {suggestion.convenienceItems && (
           <div className="space-y-3 rounded-3xl border border-line p-4">
-            <div>
-              <p className="text-xs font-bold text-coral-deep">🏪 買うものリスト</p>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {suggestion.convenienceItems.buyList.map((b) => (
-                  <li
-                    key={b}
-                    className="rounded-full bg-coral-soft px-3 py-1 text-xs text-coral-deep"
-                  >
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-xs font-bold text-coral-deep">🏪 コンビニのポイント</p>
             <p className="text-xs leading-relaxed text-ink-soft">
               {suggestion.convenienceItems.reason}
             </p>
@@ -217,7 +205,7 @@ export function MealCard({
         {/* 調理スタイルに合わせた項目リスト */}
         <div>
           <p className="mb-2 text-xs font-bold text-ink">
-            {isConveni ? "数量" : getItemsLabel(suggestion, cookingStyle)}
+            {isConveni ? "🛒 買い物リスト" : getItemsLabel(suggestion, cookingStyle)}
           </p>
           <ul className="grid grid-cols-1 gap-2 text-sm text-ink sm:grid-cols-2 sm:gap-x-4 sm:gap-y-1.5">
             {suggestion.ingredients.map((ing) => (
