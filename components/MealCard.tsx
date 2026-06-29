@@ -174,33 +174,30 @@ export function MealCard({
           <ScoreStars label="手軽さ" score={suggestion.easinessScore} />
         </div>
 
-        {/* ダイエットポイント */}
+        {/* ポイント */}
         <div className="rounded-3xl bg-sage-soft/70 p-4">
-          <p className="text-xs font-bold text-sage-deep">💚 ダイエット向きポイント</p>
+          <p className="text-xs font-bold text-sage-deep">💚 ポイント</p>
           <p className="mt-1.5 text-sm leading-relaxed text-ink">
             {suggestion.dietPoints}
           </p>
-        </div>
-
-        {/* コンビニモード専用 */}
-        {suggestion.convenienceItems && (
-          <div className="space-y-3 rounded-3xl border border-line p-4">
-            <p className="text-xs font-bold text-coral-deep">🏪 ポイント</p>
-            <p className="text-xs leading-relaxed text-ink-soft">
-              {suggestion.convenienceItems.reason}
-            </p>
-            <p className="text-xs leading-relaxed text-ink-soft">
-              <span className="font-bold">栄養バランス：</span>
-              {suggestion.convenienceItems.nutritionBalance}
-            </p>
-            {suggestion.convenienceItems.avoidItems.length > 0 && (
+          {suggestion.convenienceItems && (
+            <div className="mt-3 space-y-2 border-t border-sage/20 pt-3">
               <p className="text-xs leading-relaxed text-ink-soft">
-                <span className="font-bold">避けたい追加商品：</span>
-                {suggestion.convenienceItems.avoidItems.join("、")}
+                {suggestion.convenienceItems.reason}
               </p>
-            )}
-          </div>
-        )}
+              <p className="text-xs leading-relaxed text-ink-soft">
+                <span className="font-bold">栄養バランス：</span>
+                {suggestion.convenienceItems.nutritionBalance}
+              </p>
+              {suggestion.convenienceItems.avoidItems.length > 0 && (
+                <p className="text-xs leading-relaxed text-ink-soft">
+                  <span className="font-bold">避けたい追加商品：</span>
+                  {suggestion.convenienceItems.avoidItems.join("、")}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
 
         {/* 調理スタイルに合わせた項目リスト */}
         <div>
