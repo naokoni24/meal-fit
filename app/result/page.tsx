@@ -20,6 +20,15 @@ export default function ResultPage() {
   const [hydrated, setHydrated] = useState(false);
   const [regenerating, setRegenerating] = useState(false);
   const [regenError, setRegenError] = useState<string | null>(null);
+  const [dots, setDots] = useState("");
+
+  useEffect(() => {
+    if (!regenerating) { setDots(""); return; }
+    const steps = ["", "・", "・・", "・・・"];
+    let i = 0;
+    const id = setInterval(() => { i = (i + 1) % steps.length; setDots(steps[i]); }, 500);
+    return () => clearInterval(id);
+  }, [regenerating]);
 
   useEffect(() => {
     try {
@@ -140,7 +149,18 @@ export default function ResultPage() {
           disabled={regenerating}
           className="flex-1 rounded-full bg-coral px-6 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-coral-deep disabled:opacity-70"
         >
-          {regenerating ? "考えています…🍳" : "もう一度提案してもらう"}
+          {regenerating ? (
+            <span className="flex items-center justify-center gap-2">
+              <span>考えています<span className="inline-block w-6 text-left">{dots}</span></span>
+              <span className="flex items-end gap-1">
+                {(["🍙", "🥦", "🐟", "🥚"] as const).map((emoji, i) => (
+                  <span key={emoji} className="animate-pop text-lg" style={{ animationDelay: `${i * 0.2}s` }}>
+                    {emoji}
+                  </span>
+                ))}
+              </span>
+            </span>
+          ) : "もう一度提案してもらう"}
         </button>
         <Link
           href="/create"
