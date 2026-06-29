@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type {
   Goal,
@@ -273,9 +274,9 @@ export function MealForm() {
         </p>
       </div>
 
-      {/* ローディングオーバーレイ */}
-      {loading && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-cream">
+      {/* ローディングオーバーレイ（body直下にportalでマウント） */}
+      {loading && typeof document !== "undefined" && createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-cream">
           <div className="text-center">
             <div className="flex items-end justify-center gap-5">
               {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
@@ -291,7 +292,8 @@ export function MealForm() {
             <p className="mt-8 text-lg font-bold text-ink">献立を考えています</p>
             <p className="mt-1.5 text-sm text-ink-soft">AIが最適なメニューを選んでいます…</p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
