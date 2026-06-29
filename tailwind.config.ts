@@ -48,15 +48,14 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)", opacity: "1" },
           "50%": { transform: "translateY(-18px)", opacity: "0.7" },
         },
-        dots: {
-          "0%, 20%": { content: "''" },
-          "40%": { content: "'.'" },
-          "60%": { content: "'..'" },
-          "80%, 100%": { content: "'...'" },
+        orbit: {
+          "0%":   { transform: "rotate(0deg)   translateX(52px) rotate(0deg)" },
+          "100%": { transform: "rotate(360deg) translateX(52px) rotate(-360deg)" },
         },
       },
       animation: {
-        wave: "wave 1.1s ease-in-out infinite",
+        wave:  "wave 1.1s ease-in-out infinite",
+        orbit: "orbit 3s linear infinite",
       },
       fontSize: {
         xs: ["13px", { lineHeight: "1.5" }],
