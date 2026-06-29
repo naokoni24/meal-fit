@@ -89,11 +89,7 @@ export function buildUserPrompt(input: RequestSchema): string {
   lines.push("");
   if (input.cookingStyle === "convenience") {
     lines.push(
-      "【コンビニ飯モード】各案を、買うものリスト（商品カテゴリ）・組み合わせ理由・ざっくり栄養バランス・避けた方がいい追加商品を含めて提案し、convenienceItems を必ず埋めてください。ingredients は買う商品カテゴリ、steps は調理方法ではなく「組み合わせ方・食べ方」にしてください。",
-    );
-  } else if (input.cookingStyle === "deli") {
-    lines.push(
-      "【スーパー惣菜モード】各案を、スーパーで買える惣菜・主食・汁物などの商品カテゴリの組み合わせとして提案してください。ingredients は買う商品カテゴリ、steps は調理方法ではなく「選び方・食べ方・組み合わせ方」にしてください。convenienceItems は null。",
+      "【コンビニ・惣菜モード】コンビニ商品またはスーパーの惣菜・主食・汁物などを組み合わせる案を提案してください。買うものリスト（商品カテゴリ）・組み合わせ理由・ざっくり栄養バランス・避けた方がいい追加商品を含め、convenienceItems を必ず埋めてください。ingredients は買う商品カテゴリ、steps は調理方法ではなく「組み合わせ方・食べ方」にしてください。",
     );
   } else if (input.cookingStyle === "eatout") {
     lines.push(

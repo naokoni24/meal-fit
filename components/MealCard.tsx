@@ -37,8 +37,6 @@ function getStepsLabel(
   switch (style) {
     case "convenience":
       return "食べ方を見る";
-    case "deli":
-      return "食べ方を見る";
     case "eatout":
       return "注文のコツを見る";
     case "jisui":
@@ -54,7 +52,6 @@ function getItemsLabel(
   const style = getDisplayCookingStyle(suggestion, cookingStyle);
   switch (style) {
     case "convenience":
-    case "deli":
       return "買うもの";
     case "eatout":
       return "選ぶもの";

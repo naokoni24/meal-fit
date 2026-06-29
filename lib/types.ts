@@ -2,7 +2,7 @@
 
 export type Goal = "reduce" | "maintain" | "muscle" | "health";
 export type MealType = "breakfast" | "lunch" | "dinner" | "midnight";
-export type CookingStyle = "jisui" | "convenience" | "deli" | "eatout";
+export type CookingStyle = "jisui" | "convenience" | "eatout";
 export type HungerLevel = "light" | "normal" | "hungry";
 export type NutritionPref = "low_carb" | "low_fat" | "high_protein" | "low_salt";
 

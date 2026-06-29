@@ -4,7 +4,7 @@ import { z } from "zod";
 export const requestSchema = z.object({
   goal: z.enum(["reduce", "maintain", "muscle", "health"]),
   mealType: z.enum(["breakfast", "lunch", "dinner", "midnight"]),
-  cookingStyle: z.enum(["jisui", "convenience", "deli", "eatout"]),
+  cookingStyle: z.enum(["jisui", "convenience", "eatout"]),
   useIngredients: z.array(z.string().min(1)).max(20).default([]),
   avoidIngredients: z.array(z.string().min(1)).max(20).default([]),
   cookTimeMax: z.number().int().min(5).max(120).default(15),

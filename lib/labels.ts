@@ -24,8 +24,7 @@ export const MEAL_TYPE_LABELS: Record<MealType, string> = {
 
 export const COOKING_STYLE_LABELS: Record<CookingStyle, string> = {
   jisui: "自炊する",
-  convenience: "コンビニ",
-  deli: "スーパー惣菜",
+  convenience: "コンビニ・惣菜",
   eatout: "外食",
 };
 
