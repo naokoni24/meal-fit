@@ -214,10 +214,10 @@ export function MealCard({
           </div>
         )}
 
-        {/* 調理スタイルに合わせた項目リスト（コンビニモードは買うものリストと重複するため非表示） */}
-        {!isConveni && <div>
+        {/* 調理スタイルに合わせた項目リスト */}
+        <div>
           <p className="mb-2 text-xs font-bold text-ink">
-            {getItemsLabel(suggestion, cookingStyle)}
+            {isConveni ? "数量" : getItemsLabel(suggestion, cookingStyle)}
           </p>
           <ul className="grid grid-cols-1 gap-2 text-sm text-ink sm:grid-cols-2 sm:gap-x-4 sm:gap-y-1.5">
             {suggestion.ingredients.map((ing) => (
@@ -232,7 +232,7 @@ export function MealCard({
               </li>
             ))}
           </ul>
-        </div>}
+        </div>
 
         {/* 調理スタイルに合わせた補足（折りたたみ） */}
         {suggestion.steps.length > 0 && (
