@@ -65,13 +65,13 @@ export function MealCard({
       style={{ animationDelay: `${index * 90}ms` }}
     >
       {/* 画像 */}
-      <div className="relative h-36 overflow-hidden">
+      <div className="relative h-44 overflow-hidden bg-cream/70">
         {suggestion.imageUrl ? (
           <>
             <img
               src={suggestion.imageUrl}
               alt={suggestion.title}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain object-center"
               loading="lazy"
             />
             {suggestion.imageCredit && (

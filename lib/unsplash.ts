@@ -1,7 +1,7 @@
 const ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 
 interface UnsplashPhoto {
-  urls: { small: string };
+  urls: { raw: string; small: string };
   user: { name: string; links: { html: string } };
 }
 
@@ -25,12 +25,21 @@ export async function fetchFoodImage(query: string): Promise<UnsplashImage | nul
     // ランダムではなく最も関連度が高い1枚目を使う
     const photo = data.results[0];
     if (!photo) return null;
+    const url = buildCenteredImageUrl(photo.urls.raw || photo.urls.small);
     return {
-      url: photo.urls.small,
+      url,
       creditName: photo.user.name,
       creditUrl: `${photo.user.links.html}?utm_source=yorugohan_ai&utm_medium=referral`,
     };
   } catch {
     return null;
   }
+}
+
+function buildCenteredImageUrl(rawUrl: string): string {
+  const url = new URL(rawUrl);
+  url.searchParams.set("w", "900");
+  url.searchParams.set("fit", "max");
+  url.searchParams.set("q", "82");
+  return url.toString();
 }

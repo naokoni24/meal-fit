@@ -103,7 +103,11 @@ export default function Home() {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 {s.image ? (
-                  <img src={s.image} alt={s.title} className="h-full w-full object-cover" />
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    className="h-full w-full bg-cream/70 object-contain object-center"
+                  />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-gradient-to-br from-coral-soft via-cream to-sage-soft text-4xl">
                     {s.emoji}
