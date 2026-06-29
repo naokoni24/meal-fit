@@ -40,7 +40,7 @@ function getStepsLabel(
     case "deli":
       return "食べ方を見る";
     case "eatout":
-      return "選び方を見る";
+      return "注文のコツを見る";
     case "jisui":
     default:
       return "作り方を見る";
