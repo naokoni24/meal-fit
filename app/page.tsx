@@ -50,7 +50,7 @@ export default function Home() {
       {/* 利用シーン */}
       <section className="mx-auto max-w-5xl px-5 py-14">
         <h2 className="text-center text-2xl font-bold text-ink">
-          こんなときに、寄りそいます
+          こんな毎日に、ちょうどいい
         </h2>
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {scenes.map((s) => (
