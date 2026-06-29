@@ -279,7 +279,7 @@ export function MealForm() {
           {loading ? (
             <span className="flex items-center justify-center gap-3">
               <span className="flex items-end gap-1.5">
-                {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
+                {(["🍙", "🥦", "🐟", "🥚"] as const).map((emoji, i) => (
                   <span
                     key={emoji}
                     className="animate-pop text-xl"
