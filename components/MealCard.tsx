@@ -214,8 +214,8 @@ export function MealCard({
           </div>
         )}
 
-        {/* 調理スタイルに合わせた項目リスト */}
-        <div>
+        {/* 調理スタイルに合わせた項目リスト（コンビニモードは買うものリストと重複するため非表示） */}
+        {!isConveni && <div>
           <p className="mb-2 text-xs font-bold text-ink">
             {getItemsLabel(suggestion, cookingStyle)}
           </p>
@@ -232,7 +232,7 @@ export function MealCard({
               </li>
             ))}
           </ul>
-        </div>
+        </div>}
 
         {/* 調理スタイルに合わせた補足（折りたたみ） */}
         {suggestion.steps.length > 0 && (
