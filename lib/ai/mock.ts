@@ -11,6 +11,8 @@ const isNight = (m: RequestSchema["mealType"]) =>
 
 export function buildMockSuggestions(input: RequestSchema): AiSuggestion[] {
   if (input.cookingStyle === "convenience") return convenienceMocks(input);
+  if (input.cookingStyle === "deli") return deliMocks(input);
+  if (input.cookingStyle === "eatout") return eatoutMocks(input);
 
   const ing = input.useIngredients;
   const main = ing[0] ?? "鶏むね肉";
@@ -98,6 +100,168 @@ export function buildMockSuggestions(input: RequestSchema): AiSuggestion[] {
       easinessScore: 3,
       convenienceItems: null,
       imageTag: "japanese healthy dinner plate rice protein",
+    },
+  ];
+}
+
+function deliMocks(input: RequestSchema): AiSuggestion[] {
+  const night = isNight(input.mealType);
+  return [
+    {
+      title: "焼き魚惣菜＋カット野菜＋味噌汁",
+      description: "スーパーで揃えやすい、主菜・野菜・汁物の軽めセット。",
+      ingredients: [
+        { name: "焼き魚惣菜", amount: "1パック" },
+        { name: "カット野菜", amount: "1袋" },
+        { name: "味噌汁", amount: "1杯" },
+      ],
+      steps: [
+        "魚は揚げ物ではなく焼き魚を選ぶ",
+        "カット野菜を足して食物繊維を補う",
+        night ? "夜遅い日はごはんを控えめにする" : "必要なら小さめのおにぎりを足す",
+      ],
+      caloriesKcal: 360,
+      proteinG: 28,
+      fatG: 12,
+      carbsG: 32,
+      sugarG: 24,
+      dietPoints: "たんぱく質と野菜を同時にとりやすく、揚げ物惣菜より脂質を抑えられます。",
+      cautions: "味噌汁や惣菜は塩分が高くなりやすいので、汁は飲み干さないのがおすすめです。",
+      satietyScore: 4,
+      easinessScore: 5,
+      convenienceItems: null,
+      imageTag: "japanese grilled fish vegetable side dish",
+    },
+    {
+      title: "蒸し鶏サラダ＋豆腐惣菜",
+      description: "脂質を抑えつつ、たんぱく質をしっかり確保する惣菜セット。",
+      ingredients: [
+        { name: "蒸し鶏サラダ", amount: "1パック" },
+        { name: "豆腐惣菜", amount: "1個" },
+        { name: "海藻スープ", amount: "1杯" },
+      ],
+      steps: [
+        "マヨネーズ系よりノンオイル系のサラダを選ぶ",
+        "豆腐惣菜でたんぱく質を補う",
+        "汁物を足して満足感を上げる",
+      ],
+      caloriesKcal: 300,
+      proteinG: 26,
+      fatG: 10,
+      carbsG: 20,
+      sugarG: 14,
+      dietPoints: "軽めでもたんぱく質を確保でき、夜でも重くなりにくい組み合わせです。",
+      cautions: "ドレッシングは半量から使うと脂質と塩分を抑えやすいです。",
+      satietyScore: 3,
+      easinessScore: 5,
+      convenienceItems: null,
+      imageTag: "japanese chicken salad tofu side dish",
+    },
+    {
+      title: "ローストビーフ惣菜＋雑穀おにぎり",
+      description: "赤身肉のたんぱく質と少量の主食で、満足感を出すセット。",
+      ingredients: [
+        { name: "ローストビーフ惣菜", amount: "1パック" },
+        { name: "雑穀おにぎり", amount: "1個" },
+        { name: "野菜スープ", amount: "1杯" },
+      ],
+      steps: [
+        "肉惣菜は揚げ物ではなく赤身系を選ぶ",
+        "主食は雑穀や鮭などシンプルなものにする",
+        "野菜スープで不足しがちな野菜を補う",
+      ],
+      caloriesKcal: 430,
+      proteinG: 32,
+      fatG: 13,
+      carbsG: 42,
+      sugarG: 32,
+      dietPoints: "たんぱく質と主食のバランスがよく、空腹感が強い日にも向きます。",
+      cautions: "ソースやタレは塩分・糖質が高い場合があるので控えめに。",
+      satietyScore: 4,
+      easinessScore: 5,
+      convenienceItems: null,
+      imageTag: "japanese roast beef rice ball vegetable soup",
+    },
+  ];
+}
+
+function eatoutMocks(input: RequestSchema): AiSuggestion[] {
+  const night = isNight(input.mealType);
+  return [
+    {
+      title: "焼き魚定食（ごはん少なめ）",
+      description: "外食でも選びやすい、たんぱく質と野菜を確保できる定食です。",
+      ingredients: [
+        { name: "焼き魚定食", amount: "1人前" },
+        { name: "ごはん", amount: night ? "少なめ" : "普通〜少なめ" },
+        { name: "小鉢・味噌汁", amount: "ついていれば活用" },
+      ],
+      steps: [
+        "揚げ魚ではなく焼き魚を選ぶ",
+        "ごはんは少なめで注文する",
+        "漬物や汁物は塩分を見て控えめにする",
+      ],
+      caloriesKcal: 520,
+      proteinG: 34,
+      fatG: 16,
+      carbsG: 58,
+      sugarG: 46,
+      dietPoints: "主菜・主食・副菜が揃いやすく、外食でも栄養バランスを作りやすい選択です。",
+      cautions: "塩分が多くなりやすいので、汁物は飲み干さないのがおすすめです。",
+      satietyScore: 5,
+      easinessScore: 4,
+      convenienceItems: null,
+      imageTag: "japanese grilled fish set meal",
+    },
+    {
+      title: "鶏むね肉のサラダボウル",
+      description: "野菜とたんぱく質を中心に、軽めに整えたい日に向く外食メニュー。",
+      ingredients: [
+        { name: "チキンサラダボウル", amount: "1皿" },
+        { name: "ドレッシング", amount: "半量" },
+        { name: "スープ", amount: "必要なら1杯" },
+      ],
+      steps: [
+        "鶏肉は揚げではなくグリル/蒸し系を選ぶ",
+        "ドレッシングは別添えにして半量から使う",
+        "足りない時は甘い飲み物ではなくスープを足す",
+      ],
+      caloriesKcal: 360,
+      proteinG: 30,
+      fatG: 14,
+      carbsG: 26,
+      sugarG: 18,
+      dietPoints: "低糖質寄りで野菜をとりやすく、夜遅い外食でも重くなりにくいです。",
+      cautions: "シーザー系やクリーミー系ドレッシングは脂質が高めです。",
+      satietyScore: 3,
+      easinessScore: 4,
+      convenienceItems: null,
+      imageTag: "grilled chicken salad bowl restaurant",
+    },
+    {
+      title: "そば＋温泉卵＋小鉢",
+      description: "主食を軽めにしつつ、卵と小鉢でたんぱく質と野菜を補います。",
+      ingredients: [
+        { name: "温かいそば", amount: "1杯" },
+        { name: "温泉卵", amount: "1個" },
+        { name: "野菜小鉢", amount: "1品" },
+      ],
+      steps: [
+        "天ぷら付きより温かいそば単品を選ぶ",
+        "温泉卵や小鉢を足して栄養を補う",
+        "つゆは飲み干さず、塩分を控える",
+      ],
+      caloriesKcal: 430,
+      proteinG: 22,
+      fatG: 10,
+      carbsG: 62,
+      sugarG: 50,
+      dietPoints: "脂質を抑えやすく、温かい汁物で満足感も得やすい選択です。",
+      cautions: "そばアレルギーがある場合は選ばないでください。",
+      satietyScore: 4,
+      easinessScore: 4,
+      convenienceItems: null,
+      imageTag: "japanese soba egg side dish",
     },
   ];
 }
