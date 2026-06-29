@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type {
   Goal,
@@ -275,38 +274,31 @@ export function MealForm() {
           type="button"
           onClick={submit}
           disabled={loading}
-          className="w-full rounded-full bg-coral px-6 py-4 text-base font-bold text-white shadow-soft transition hover:bg-coral-deep disabled:opacity-70"
+          className="w-full rounded-full bg-coral px-6 py-4 text-base font-bold text-white shadow-soft transition hover:bg-coral-deep disabled:opacity-80"
         >
-          AIに献立を提案してもらう
+          {loading ? (
+            <span className="flex items-center justify-center gap-3">
+              <span className="flex items-end gap-1.5">
+                {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
+                  <span
+                    key={emoji}
+                    className="animate-pop text-xl"
+                    style={{ animationDelay: `${i * 0.2}s` }}
+                  >
+                    {emoji}
+                  </span>
+                ))}
+              </span>
+              <span>考えています<span className="inline-block w-6 text-left">{dots}</span></span>
+            </span>
+          ) : (
+            "AIに献立を提案してもらう"
+          )}
         </button>
         <p className="mt-2 text-center text-xs text-ink-soft">
           無料・登録なしで使えます（1日3回まで）
         </p>
       </div>
-
-      {/* ローディングオーバーレイ（body直下にportalでマウント） */}
-      {loading && typeof document !== "undefined" && createPortal(
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-cream">
-          <div className="text-center">
-            <div className="flex items-end justify-center gap-5">
-              {(["🥗", "🍳", "🥩", "🍚"] as const).map((emoji, i) => (
-                <span
-                  key={emoji}
-                  className="animate-pop text-4xl"
-                  style={{ animationDelay: `${i * 0.2}s` }}
-                >
-                  {emoji}
-                </span>
-              ))}
-            </div>
-            <p className="mt-8 text-lg font-bold text-ink">
-              献立を考えています<span className="inline-block w-8 text-left">{dots}</span>
-            </p>
-            <p className="mt-1.5 text-sm text-ink-soft">AIが最適なメニューを選んでいます…</p>
-          </div>
-        </div>,
-        document.body
-      )}
     </div>
   );
 }
