@@ -43,6 +43,21 @@ const config: Config = {
       borderRadius: {
         "4xl": "2rem",
       },
+      keyframes: {
+        wave: {
+          "0%, 100%": { transform: "translateY(0px)", opacity: "1" },
+          "50%": { transform: "translateY(-18px)", opacity: "0.7" },
+        },
+        dots: {
+          "0%, 20%": { content: "''" },
+          "40%": { content: "'.'" },
+          "60%": { content: "'..'" },
+          "80%, 100%": { content: "'...'" },
+        },
+      },
+      animation: {
+        wave: "wave 1.1s ease-in-out infinite",
+      },
       fontSize: {
         xs: ["13px", { lineHeight: "1.5" }],
         sm: ["15px", { lineHeight: "1.65" }],
