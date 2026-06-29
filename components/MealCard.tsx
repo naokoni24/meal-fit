@@ -193,11 +193,16 @@ export function MealCard({
         {/* 材料 */}
         <div>
           <p className="mb-2 text-xs font-bold text-ink">材料</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-ink">
+          <ul className="grid grid-cols-1 gap-2 text-sm text-ink sm:grid-cols-2 sm:gap-x-4 sm:gap-y-1.5">
             {suggestion.ingredients.map((ing) => (
-              <li key={ing.name} className="flex justify-between gap-2">
-                <span>{ing.name}</span>
-                <span className="text-ink-soft">{ing.amount}</span>
+              <li
+                key={ing.name}
+                className="flex min-w-0 items-start justify-between gap-3 rounded-2xl bg-cream/50 px-3 py-2 sm:bg-transparent sm:px-0 sm:py-0"
+              >
+                <span className="min-w-0 flex-1 leading-relaxed">{ing.name}</span>
+                <span className="shrink-0 text-right leading-relaxed text-ink-soft">
+                  {ing.amount}
+                </span>
               </li>
             ))}
           </ul>
