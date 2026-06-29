@@ -213,11 +213,11 @@ export function MealCard({
         )}
 
         {/* アクション */}
-        <div className="flex gap-2.5 pt-1">
+        <div className="flex gap-2 pt-1">
           <button
             type="button"
             onClick={toggleFav}
-            className={`flex-1 rounded-full border px-4 py-3 text-sm font-medium transition ${
+            className={`flex-1 whitespace-nowrap rounded-full border px-3 py-2 text-xs font-medium transition ${
               faved
                 ? "border-coral bg-coral text-white"
                 : "border-coral/40 bg-surface text-coral-deep hover:bg-coral-soft"
@@ -228,7 +228,7 @@ export function MealCard({
           <button
             type="button"
             onClick={addToShopping}
-            className="flex-1 rounded-full border border-sage/50 bg-surface px-4 py-3 text-sm font-medium text-sage-deep transition hover:bg-sage-soft"
+            className="flex-1 whitespace-nowrap rounded-full border border-sage/50 bg-surface px-3 py-2 text-xs font-medium text-sage-deep transition hover:bg-sage-soft"
           >
             {added ? "✓ 追加しました" : "🛒 買い物リストへ"}
           </button>
