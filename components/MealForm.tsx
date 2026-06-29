@@ -296,7 +296,7 @@ export function MealForm() {
           )}
         </button>
         <p className="mt-2 text-center text-xs text-ink-soft">
-          無料・登録なしで使えます（1日3回まで）
+          無料・登録なしで使えます
         </p>
       </div>
     </div>
