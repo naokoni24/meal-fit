@@ -101,7 +101,7 @@ export default function Home() {
               key={s.title}
               className="overflow-hidden rounded-4xl border border-line bg-surface shadow-card"
             >
-              <div className="relative h-44 overflow-hidden bg-cream/70">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 {s.image ? (
                   <img
                     src={s.image}
