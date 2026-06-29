@@ -8,13 +8,12 @@ export default function Icon() {
   return new ImageResponse(
     <div
       style={{
-        background: "#DD8A72",
+        background: "transparent",
         width: "100%",
         height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: 6,
         fontSize: 22,
       }}
     >

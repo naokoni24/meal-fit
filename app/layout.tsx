@@ -54,7 +54,7 @@ export default async function RootLayout({
         <header className="sticky top-0 z-30 border-b border-line/70 bg-cream/80 backdrop-blur-md">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-coral-soft text-lg">
+              <span className="grid h-9 w-9 place-items-center text-2xl">
                 🍃
               </span>
               <span className="leading-tight">

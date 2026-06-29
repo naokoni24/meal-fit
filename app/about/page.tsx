@@ -44,7 +44,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-2xl px-5 py-12">
       <header className="mb-10 text-center">
-        <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-coral-soft text-3xl">
+        <div className="mx-auto grid h-16 w-16 place-items-center text-5xl">
           🍃
         </div>
         <h1 className="mt-5 text-3xl font-bold text-ink">このアプリについて</h1>
