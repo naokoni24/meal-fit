@@ -26,9 +26,6 @@ export default function Home() {
         <div className="pointer-events-none absolute -left-16 -top-10 h-64 w-64 rounded-full bg-coral-soft/60 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 top-20 h-72 w-72 rounded-full bg-sage-soft/60 blur-3xl" />
         <div className="relative mx-auto max-w-3xl px-5 pb-10 pt-16 text-center sm:pt-24">
-          <span className="inline-block rounded-full bg-white/70 px-4 py-1.5 text-xs font-medium text-coral-deep shadow-soft backdrop-blur">
-            AIにおまかせ・無料ではじめる
-          </span>
           <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
             がんばらない、
             <br />
