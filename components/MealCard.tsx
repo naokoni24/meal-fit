@@ -185,7 +185,7 @@ export function MealCard({
         {/* コンビニモード専用 */}
         {suggestion.convenienceItems && (
           <div className="space-y-3 rounded-3xl border border-line p-4">
-            <p className="text-xs font-bold text-coral-deep">🏪 コンビニのポイント</p>
+            <p className="text-xs font-bold text-coral-deep">🏪 ポイント</p>
             <p className="text-xs leading-relaxed text-ink-soft">
               {suggestion.convenienceItems.reason}
             </p>
