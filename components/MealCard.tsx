@@ -8,7 +8,7 @@ import { ScoreStars } from "./ScoreStars";
 
 function buildXUrl(s: MealSuggestion): string {
   const text = [
-    `🌙ととのうごはんで今日の献立が決まった！`,
+    `🍃ととのうごはんで今日の献立が決まった！`,
     `「${s.title}」`,
     `${s.caloriesKcal}kcal（糖質${s.sugarG}g）`,
     `#ととのうごはん #ダイエット飯`,
@@ -18,7 +18,7 @@ function buildXUrl(s: MealSuggestion): string {
 
 function buildLineUrl(s: MealSuggestion): string {
   const text = [
-    `🌙ととのうごはんで今日の献立が決まった！`,
+    `🍃ととのうごはんで今日の献立が決まった！`,
     ``,
     `「${s.title}」`,
     `📊 ${s.caloriesKcal}kcal（糖質${s.sugarG}g）`,

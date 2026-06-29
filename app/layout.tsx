@@ -55,7 +55,7 @@ export default async function RootLayout({
           <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3.5">
             <Link href="/" className="flex items-center gap-2.5">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-coral-soft text-lg">
-                🌙
+                🍃
               </span>
               <span className="leading-tight">
                 <span className="block text-base font-bold text-ink">

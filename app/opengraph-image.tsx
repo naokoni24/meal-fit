@@ -20,7 +20,7 @@ export default function OpenGraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ fontSize: 100 }}>🌙</div>
+        <div style={{ fontSize: 100 }}>🍃</div>
         <div
           style={{
             fontSize: 72,

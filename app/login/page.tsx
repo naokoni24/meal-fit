@@ -37,7 +37,7 @@ export default function LoginPage() {
       <div className="rounded-4xl border border-line bg-surface p-7 shadow-card">
         <div className="text-center">
           <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-coral-soft text-2xl">
-            🌙
+            🍃
           </div>
           <h1 className="mt-4 text-2xl font-bold text-ink">ログイン</h1>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
