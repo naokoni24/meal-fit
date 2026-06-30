@@ -8,7 +8,7 @@ export default function AppleIcon() {
   return new ImageResponse(
     <div
       style={{
-        background: "transparent",
+        background: "#E2EADF",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -17,7 +17,7 @@ export default function AppleIcon() {
         fontSize: 120,
       }}
     >
-      🍃
+      🌿
     </div>,
     { ...size },
   );
