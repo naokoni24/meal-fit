@@ -177,7 +177,7 @@ export function MealCard({
 
         {/* ポイント */}
         <div className="rounded-3xl bg-sage-soft/70 p-4">
-          <p className="text-xs font-bold text-sage-deep">💚 ポイント</p>
+          <p className="text-xs font-bold text-sage-deep">🍃 ポイント</p>
           <p className="mt-1.5 text-sm leading-relaxed text-ink">
             {suggestion.dietPoints}
           </p>
