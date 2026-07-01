@@ -68,6 +68,10 @@ function getDisplayCookingStyle(
   return cookingStyle ?? (suggestion.convenienceItems ? "convenience" : "jisui");
 }
 
+function getDisplayCautions(cautions: string): string {
+  return cautions.trim().replace(/^特に(なし|ありません)[。.、\s]*/, "");
+}
+
 export function MealCard({
   suggestion,
   index,
@@ -236,9 +240,9 @@ export function MealCard({
         )}
 
         {/* 注意点 */}
-        {suggestion.cautions && !/^特に(なし|ありません)/.test(suggestion.cautions.trim()) && (
+        {suggestion.cautions && getDisplayCautions(suggestion.cautions) && (
           <p className="text-xs leading-relaxed text-ink-soft">
-            ⚠️ {suggestion.cautions}
+            ⚠️ {getDisplayCautions(suggestion.cautions)}
           </p>
         )}
 
