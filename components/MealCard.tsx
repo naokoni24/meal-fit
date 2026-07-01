@@ -236,7 +236,7 @@ export function MealCard({
         )}
 
         {/* 注意点 */}
-        {suggestion.cautions && (
+        {suggestion.cautions && !/^特に(なし|ありません)/.test(suggestion.cautions.trim()) && (
           <p className="text-xs leading-relaxed text-ink-soft">
             ⚠️ {suggestion.cautions}
           </p>
