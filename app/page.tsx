@@ -41,7 +41,7 @@ export default function Home() {
               href="/create"
               className="rounded-full bg-coral px-8 py-4 text-base font-bold text-white shadow-soft transition hover:bg-coral-deep"
             >
-              無料で献立をつくる
+              AIに献立をつくってもらう
             </Link>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Home() {
           href="/create"
           className="mt-6 inline-block rounded-full bg-coral px-8 py-4 text-base font-bold text-white shadow-soft transition hover:bg-coral-deep"
         >
-          無料で献立をつくる
+          AIに献立をつくってもらう
         </Link>
       </section>
     </div>
